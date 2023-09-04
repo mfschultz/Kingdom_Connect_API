@@ -1,7 +1,9 @@
 from database import db
 from sqlalchemy import String
-from sqlalchemy.dialects.mysql import VARCHAR, INTEGER
+from sqlalchemy.dialects.sqlite import VARCHAR, INTEGER
 from sqlalchemy_utils import PhoneNumberType, EmailType, UUIDType
+from models.tag import Tag
+from models.business_tag import BusinessTag
 
 class Business(db.Model):
     id = db.Column(INTEGER, primary_key=True)
@@ -14,6 +16,7 @@ class Business(db.Model):
     
     #Relationships
     owner = db.relationship('User')
+    tags = db.relationship('Tag', secondary='business_tag', backref='businesses')
 
     def __repr__(self):
         return f'<Business "{self.name}">'

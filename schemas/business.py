@@ -2,6 +2,7 @@ from marshmallow_sqlalchemy import SQLAlchemySchema, auto_field
 from marshmallow import fields
 from models.business import Business
 from schemas.user import UserSchema
+from schemas.tag import TagSchema
 
 class BusinessSchema(SQLAlchemySchema):
     class Meta:
@@ -17,3 +18,4 @@ class BusinessSchema(SQLAlchemySchema):
     website = auto_field()
     
     owner = fields.Nested(UserSchema)
+    tags = fields.List(fields.Nested(TagSchema))

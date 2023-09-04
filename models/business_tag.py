@@ -1,6 +1,6 @@
-from app import db
-from sqlalchemy.dialects.mysql import INTEGER
+from database import db
+from sqlalchemy.dialects.sqlite import INTEGER
 
 class BusinessTag(db.Model):
-    business_id = db.Column(INTEGER, db.ForeignKey('business.id'))
-    tag_id = db.Column(INTEGER, db.ForeignKey('tag.id'))
+    business_id = db.Column(INTEGER, db.ForeignKey('business.id'), primary_key=True)
+    tag_id = db.Column(INTEGER, db.ForeignKey('tag.id'), primary_key=True)
