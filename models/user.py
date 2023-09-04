@@ -1,11 +1,10 @@
-from app import db
-from flask_login import UserMixin
+from database import db
 from sqlalchemy import String
-from sqlalchemy.dialects.mysql import INTEGER
-from sqlalchemy_utils import EmailType
+from sqlalchemy_utils import EmailType, UUIDType
+import uuid
 
-class User(db.model, UserMixin):
-    id = db.Column(INTEGER, primary_key=True)
+class User(db.Model):
+    id = db.Column(UUIDType(), primary_key=True, default=uuid.uuid4())
     username = db.Column(String(64), unique=True, nullable=False)
     email = db.Column(EmailType, unique=True, nullable=False)
 
