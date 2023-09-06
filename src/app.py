@@ -6,6 +6,7 @@ from resources.business import BusinessResource
 from resources.user import UserResource
 from resources.tag import TagResource
 from resources.business_tag import BusinessTagResource
+from resources.address import AddressResource
 
 
 api = Api()
@@ -26,6 +27,7 @@ api.add_resource(UserResource, '/user', '/user/<string:user_id>')
 api.add_resource(BusinessResource, '/business', '/business/<string:business_id>')
 api.add_resource(TagResource, '/tag', '/tag/<string:tag_id>')
 api.add_resource(BusinessTagResource, '/business_tag', '/business_tag/business/<string:business_id>', '/business_tag/tag/<string:tag_id>', '/business_tag/business/<string:business_id>/tag/<string:tag_id>')
+api.add_resource(AddressResource, '/address', '/address/<string:address_id>', '/address/business/<string:business_id>')
 
 if __name__== '__main__':
     app = create_app()

@@ -3,6 +3,7 @@ from marshmallow import fields
 from models.business import Business
 from schemas.user import UserSchema
 from schemas.tag import TagSchema
+from schemas.address import AddressSchema
 
 class BusinessSchema(SQLAlchemySchema):
     class Meta:
@@ -18,4 +19,5 @@ class BusinessSchema(SQLAlchemySchema):
     website = auto_field()
     
     owner = fields.Nested(UserSchema)
+    addresses = fields.List(fields.Nested(AddressSchema))
     tags = fields.List(fields.Nested(TagSchema))

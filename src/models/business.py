@@ -3,6 +3,7 @@ from sqlalchemy import String
 from sqlalchemy.dialects.sqlite import VARCHAR, INTEGER
 from sqlalchemy_utils import PhoneNumberType, EmailType, UUIDType
 from models.tag import Tag
+from models.address import Address
 from models.business_tag import BusinessTag
 
 class Business(db.Model):
@@ -16,6 +17,7 @@ class Business(db.Model):
     
     #Relationships
     owner = db.relationship('User')
+    addresses = db.relationship('Address', backref='business')
     tags = db.relationship('Tag', secondary='business_tag', backref='businesses')
 
     def __repr__(self):
