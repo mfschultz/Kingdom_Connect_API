@@ -13,11 +13,11 @@ class BusinessTagResource(Resource):
             )
         elif business_id:
             json_result = BusinessTagSchema(many=True).dump(
-                get_all_by_business(business_id=business_id)
+                get_all_by_business(business_id)
             )
         elif tag_id:
             json_result = BusinessTagSchema(many=True).dump(
-                get_all_by_tag(tag_id=tag_id)
+                get_all_by_tag(tag_id)
             )
         else:
             json_result = BusinessTagSchema(many=True).dump(

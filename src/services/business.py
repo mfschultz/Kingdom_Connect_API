@@ -9,12 +9,8 @@ def get_all_businesses():
     businesses = Business.query.all()
     return businesses
 
-def save_business(business, business_id=None):
-    if business_id:
-        # TODO: Create Update Business Functionality
-        return None
-    else:
-        db.session.add(business)
+def create_business(business):
+    db.session.add(business)
     db.session.commit()
     return business
 
