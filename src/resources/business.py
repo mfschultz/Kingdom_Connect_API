@@ -1,4 +1,4 @@
-from database import db
+from utils.database import db
 from flask_restful import Resource, request
 from schemas.business import BusinessSchema
 from services.business import get_business, get_all_businesses, create_business, delete_business

@@ -1,4 +1,4 @@
-from database import db
+from utils.database import db
 from sqlalchemy import String
 from sqlalchemy.dialects.sqlite import VARCHAR, INTEGER
 from sqlalchemy_utils import PhoneNumberType, EmailType, UUIDType

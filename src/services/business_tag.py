@@ -1,5 +1,5 @@
 from models.business_tag import BusinessTag
-from database import db
+from utils.database import db
 
 def get_business_tag(business_id, tag_id):
     business_tag = db.session.query(BusinessTag).filter_by(business_id=business_id, tag_id=tag_id).first()

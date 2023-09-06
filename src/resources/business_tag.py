@@ -1,4 +1,4 @@
-from database import db
+from utils.database import db
 from flask_restful import Resource, request
 from schemas.business_tag import BusinessTagSchema
 from services.business_tag import get_business_tag, get_all_business_tags, get_all_by_business, get_all_by_tag, create_business_tag, delete_business_tag

@@ -1,5 +1,5 @@
 from models.user import User
-from database import db
+from utils.database import db
 
 def get_user(user_id):
     user = User.query.get(user_id)

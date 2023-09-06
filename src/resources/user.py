@@ -1,4 +1,4 @@
-from database import db
+from utils.database import db
 from flask_restful import Resource, request
 from schemas.user import UserSchema
 from services.user import get_user, get_all_users, create_user, delete_user

@@ -1,4 +1,4 @@
-from database import db
+from utils.database import db
 from sqlalchemy.dialects.sqlite import INTEGER
 
 class BusinessTag(db.Model):

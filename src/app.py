@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_restful import Api
-from database import db
+from utils.database import db
 
 from resources.business import BusinessResource
 from resources.user import UserResource

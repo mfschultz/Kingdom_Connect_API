@@ -1,5 +1,5 @@
 from models.tag import Tag
-from database import db
+from utils.database import db
 
 def get_tag(tag_id):
     tag = Tag.query.get(tag_id)

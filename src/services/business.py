@@ -1,5 +1,5 @@
 from models.business import Business
-from database import db
+from utils.database import db
 
 def get_business(business_id):
     business = Business.query.get(business_id)

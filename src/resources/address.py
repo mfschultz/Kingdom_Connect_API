@@ -1,4 +1,4 @@
-from database import db
+from utils.database import db
 from flask_restful import Resource, request
 from schemas.address import AddressSchema
 from services.address import get_address, get_addresses_by_business, get_all_addresses, create_address, delete_address

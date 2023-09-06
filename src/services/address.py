@@ -1,5 +1,5 @@
 from models.address import Address
-from database import db
+from utils.database import db
 
 def get_address(address_id):
     address = Address.query.get(address_id)

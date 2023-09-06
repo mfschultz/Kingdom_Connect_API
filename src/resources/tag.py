@@ -1,4 +1,4 @@
-from database import db
+from utils.database import db
 from flask_restful import Resource, request
 from schemas.tag import TagSchema
 from services.tag import get_tag, get_all_tags, create_tag, delete_tag
